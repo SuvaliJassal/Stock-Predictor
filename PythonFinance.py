@@ -13,12 +13,18 @@ class Finance():
         self.end=dt.datetime.now()
     
     def get_stock_price(self,ticker):
-        self.df = web.DataReader(ticker,"yahoo",self.start,self.end)
-        self.df.reset_index(inplace=True)
-        return(self.df)
+        try: 
+            self.df = web.DataReader(ticker,"yahoo",self.start,self.end)
+            self.df.reset_index(inplace=True)
+            return(self.df)
+        except RemoteDataError:
+            print(f"Error: Invalid ticker symbol '{ticker}' or data not found.")
+            return None 
     
     def get_moving_avg(self,ticker):
         self.df = self.get_stock_price(ticker)
+        if self.df is None:
+            return "Invalid"
         self.df['1 ma'] = self.df['Adj Close'].rolling(window=5,min_periods=0).mean()
         ax1=plt.subplot2grid((6,1),(0,0),rowspan=5,colspan=1)
         
@@ -50,3 +56,4 @@ class Finance():
     # Blue color Bar will Denote on that day, how many share were Traded..
     # Green Points denote Buy..
     # Red Point denote Sell on that Day..
+
