@@ -1,4 +1,4 @@
-# Importing Libraries
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib import style
@@ -8,7 +8,7 @@ import pandas_datareader.data as web
 class Finance():
     def __init__(self):
         style.use('ggplot')
-        # Historic Data Since 1 Jan 2015. Change According to your choice in the form of yy,mm,dd
+        # Historic Data Since 1 Jan 2015.
         self.start=dt.datetime(2015,1,1)
         self.end=dt.datetime.now()
     
@@ -56,4 +56,5 @@ class Finance():
     # Blue color Bar will Denote on that day, how many share were Traded..
     # Green Points denote Buy..
     # Red Point denote Sell on that Day..
+
 
