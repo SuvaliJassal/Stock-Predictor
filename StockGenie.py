@@ -71,7 +71,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "STOCK GENIE"))
+        self.label.setText(_translate("MainWindow", "FinCast"))
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "TICKER SYMBOL"))
         self.pushButton.setText(_translate("MainWindow", "PREDICT"))
 
@@ -89,5 +89,6 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
 
 
