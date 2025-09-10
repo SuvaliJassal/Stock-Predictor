@@ -10,7 +10,7 @@ from PythonFinance import Finance
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("Stock Genie")
+        MainWindow.setObjectName("FinCast")
         MainWindow.resize(803, 600)
         
         
@@ -89,6 +89,7 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
 
 
 
